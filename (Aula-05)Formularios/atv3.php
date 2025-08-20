@@ -1,6 +1,6 @@
 <?php
 function exibir($valid){
-    if($valid == True){
+    if($valid){
         echo '
         <!DOCTYPE html>
         <html lang="en">
@@ -12,9 +12,9 @@ function exibir($valid){
         <body>
             <form action="" method="post">
                 <input type="text" name="login" placeholder="login">
-                <input type="text" name="senha" placeholder="senha">
+                <input type="password" name="senha" placeholder="senha">
                 <br>
-                <button>Enviar<button>
+                <button type="submit">Enviar<button>
             </form>
         </body>
         </html>';
