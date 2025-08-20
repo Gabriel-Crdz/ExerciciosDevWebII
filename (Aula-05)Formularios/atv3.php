@@ -30,5 +30,5 @@ if($login == "ifpr" && $senha == "tads"){
     $valid = False;
     echo "Bem-vindo ao TADS!!";
 }
-exibir($valid)
+exibir($valid);
 ?>
