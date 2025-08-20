@@ -1,4 +1,3 @@
-
 <?php
 function exibir($valid){
     if($valid == True){
