@@ -58,8 +58,7 @@ function calcular($v1, $v2, $o){
 
 // Validação quando o button for clicado
 if(isset($_POST["submit"])){ 
-     
-    
+
     $valor1 = $_POST["valor1"];  // Armazenando os valores das variaveis,
     $valor2 = $_POST["valor2"];  // caso não forem informadas o "submit" força elas a serem strings vazias 
     $opc = $_POST["opc"];
