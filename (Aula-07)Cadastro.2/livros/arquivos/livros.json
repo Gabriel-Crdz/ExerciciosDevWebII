@@ -1,0 +1,30 @@
+[
+    {
+        "id": "68b2315882479",
+        "autor": "J.J Martin",
+        "titulo": "A guerra dos tronos",
+        "genero": "R",
+        "paginas": "600"
+    },
+    {
+        "id": "68b233d4d0463",
+        "autor": "Jorge Amado",
+        "titulo": "Capit\u00e3es da areia",
+        "genero": "R",
+        "paginas": "256"
+    },
+    {
+        "id": "68b23895b87ca",
+        "autor": " Machado de Assis",
+        "titulo": "O alienista",
+        "genero": "F",
+        "paginas": "80"
+    },
+    {
+        "id": "68b238d8ab9a9",
+        "autor": "Issac Asimov",
+        "titulo": "A funda\u00e7\u00e3o",
+        "genero": "R",
+        "paginas": "240"
+    }
+]
