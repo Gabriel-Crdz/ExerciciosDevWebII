@@ -14,6 +14,7 @@
 body{
     background: var(--verde-escuro);
     color: var(--branco);
+    font-size: 24px;
 }
 h2{
     margin-top: 5px;
@@ -26,7 +27,7 @@ form{
     border: 2px var(--laranja) solid;
     border-radius: 8px;
     background: var(--verde);
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     /* Alinha no centro */
     width: fit-content; 
@@ -34,6 +35,10 @@ form{
     margin-right: auto;
     margin-top: 20px;
 }
+input, select{
+    font-size: 20px;
+}
+
 #radio{
     margin-top: 4px;
 }

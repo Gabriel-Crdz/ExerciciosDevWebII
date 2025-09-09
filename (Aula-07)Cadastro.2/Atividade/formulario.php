@@ -1,9 +1,6 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-include_once("persistir.php");
+include_once("persistencia.php");
 
 //Buscar os dados salvos
 $dinos = buscarDados("dinos.json");
@@ -15,12 +12,12 @@ $nomeCientif = "";
 $grupo =  "";
 $periodo =  "";
 
-if(isset($_POST["$nome"])){
+if(isset($_POST["nome"])){
     // Enviou
-    $nome = trim($_POST['nome']);
-    $nomeCientif = trim($_POST['nomeCientif']);
-    $grupo = trim($_POST['grupo']);
-    $periodo = $_POST['periodo'];
+    $nome = trim($_POST["nome"]);
+    $nomeCientif = trim($_POST["nomeCientif"]);
+    $grupo = trim($_POST["grupo"]);
+    $periodo = $_POST["periodo"];
 
     /*Validação dos campos */
     $erros = array();
@@ -43,13 +40,12 @@ if(isset($_POST["$nome"])){
         salvarDados($dinos, "dinos.json");
 
         //Forçar o recarremento para evitar o reenvio do form
-        // header("location: formulario.php");
+        header("location: formulario.php");
     }
     else{
         $msgErro = implode("<br>", $erros);
     }
 }
-
 ?>
 
 <!--HTML-->
@@ -69,9 +65,9 @@ if(isset($_POST["$nome"])){
     </div>
 
     <form method="POST">
-        <input id="nome" name="nome" placeholder="Nome" value="<?= $nome ?>">
+        <input type="text" id="nome" name="nome" placeholder="Nome" value="<?= $nome ?>">
         <br><br>
-        <input id="nomeCientif" name="nomeCientif" placeholder="Nome Cientifico" value="<?= $nomeCientif ?>">
+        <input type="text" id="nomeCientif" name="nomeCientif" placeholder="Nome Cientifico" value="<?= $nomeCientif ?>">
         <br><br>
         <select name="grupo">
             <option value="" >Grupo pertencente:</option>
