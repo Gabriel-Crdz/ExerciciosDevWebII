@@ -1,0 +1,58 @@
+*{ /* Limpa os  espaçamentos do navegador */
+    padding: 0;
+    margin: 0;
+}
+
+:root{ /* Paleta de cores */
+    --marrom: #582f0eff;
+    --laranja: #936639ff;
+    --branco: #ffffff;
+    --verde: #656d4aff;
+    --verde-escuro: #333d29ff;
+}
+
+body{
+    background: var(--verde-escuro);
+    color: var(--branco);
+}
+h2{
+    margin-top: 5px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Formulario */
+form{
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    background: var(--verde);
+    padding: 15px;
+    text-align: center;
+    /* Alinha no centro */
+    width: fit-content; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#radio{
+    margin-top: 4px;
+}
+#enviar{
+    margin-top: 10px;
+    padding: 5px;
+    background: var(--marrom);
+}
+
+/* Tabela */
+table{
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    /* Alinha o form no centro */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    border: 2px var(--laranja) solid;
+
+}
