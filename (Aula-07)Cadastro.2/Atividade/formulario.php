@@ -1,5 +1,4 @@
 <?php
-
 include_once("persistencia.php");
 
 //Buscar os dados salvos
@@ -59,15 +58,15 @@ if(isset($_POST["nome"])){
 </head>
 <body>
     <h2>Cadastro Dinossauros</h2>
-
-    <div class="divErro"> <?= $msgErro ?>
-       <!--Mensagens de Erro apareceram aqui-->
-    </div>
+    <?php if (!empty($erros)): ?>
+            <!--A div com as mensagens só aparecerão quando houver algum erro -->
+            <div id="divErro"><?= $msgErro ?></div>
+    <?php endif; ?>
 
     <form method="POST">
-        <input type="text" id="nome" name="nome" placeholder="Nome" value="<?= $nome ?>">
+        <input type="text" name="nome" placeholder="Nome" value="<?= $nome ?>">
         <br><br>
-        <input type="text" id="nomeCientif" name="nomeCientif" placeholder="Nome Cientifico" value="<?= $nomeCientif ?>">
+        <input type="text" name="nomeCientif" placeholder="Nome Cientifico" value="<?= $nomeCientif ?>">
         <br><br>
         <select name="grupo">
             <option value="" >Grupo pertencente:</option>
@@ -75,6 +74,7 @@ if(isset($_POST["nome"])){
             <option value="SS" <?= $grupo == 'SS'? 'selected': '' ?>>Saurischia-Sauropodomorpha</option>
             <option value="OC" <?= $grupo == 'OC'? 'selected': '' ?>>Ornithischia-Cerapoda</option>
             <option value="OT" <?= $grupo == 'OT'? 'selected': '' ?>>Ornithischia-Thyreophora</option>
+            <option value="O" <?= $grupo == 'O'? 'selected': '' ?>>Outro</option>
         </select>
         <br><br>
         <label>Periodo da Era Mesozoica:</label>
@@ -87,6 +87,7 @@ if(isset($_POST["nome"])){
     </form>
 
     <table>
+        <caption>Cadastros Atuais:</caption>
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -107,9 +108,15 @@ if(isset($_POST["nome"])){
                     elseif($d['grupo'] == 'SS') echo "S-Sauropodomorpha";
                     elseif($d['grupo'] == 'OC') echo "O-Cerapoda";
                     elseif($d['grupo'] == 'OT') echo "O-Thyreophora";
+                    elseif($d['grupo'] == 'O') echo "Outro";
                     ?>
                 </td>
-                <td><?= $d['periodo'] ?></td>
+                <td><?php
+                    if($d['periodo'] == 'T') echo "Triássico";
+                    elseif($d['periodo'] == 'J') echo "Jurássico";
+                    elseif($d['periodo'] == 'C') echo "Cretáceo"; 
+                ?>
+                </td>
                 <td>
                     <a href="excluir.php?id=<?= $d['id'] ?>"
                         onclick="return confirm('Confirma a exclusão?')">

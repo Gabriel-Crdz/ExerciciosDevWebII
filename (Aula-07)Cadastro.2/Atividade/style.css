@@ -9,6 +9,9 @@
     --branco: #ffffff;
     --verde: #656d4aff;
     --verde-escuro: #333d29ff;
+
+    --azul:#184e77;
+    --roxo:#3c096c;
 }
 
 body{
@@ -16,12 +19,14 @@ body{
     color: var(--branco);
     font-size: 24px;
 }
-h2{
+h2{ /* Titulo */
+    color: var(--laranja);
     margin-top: 5px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
+
 /* Formulario */
 form{
     border: 2px var(--laranja) solid;
@@ -29,7 +34,7 @@ form{
     background: var(--verde);
     padding: 20px;
     text-align: center;
-    /* Alinha no centro */
+    /* Alinha no centro  */
     width: fit-content; 
     margin-left: auto;
     margin-right: auto;
@@ -39,10 +44,10 @@ input, select{
     font-size: 20px;
 }
 
-#radio{
+#radio{ /*input radio */
     margin-top: 4px;
 }
-#enviar{
+#enviar{ /*botão de envio */
     margin-top: 10px;
     padding: 5px;
     background: var(--marrom);
@@ -51,13 +56,49 @@ input, select{
 /* Tabela */
 table{
     border: 2px var(--laranja) solid;
-    border-radius: 8px;
+    border-radius: 8px; 
     /* Alinha o form no centro */
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
 }
-td{
+caption{
+    font-weight: bold;
+    color: var(--laranja);
+}
+th{ /* Cabeçalho */
     border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    background-color: var(--laranja);
+    color: var(--branco);
+}
+td{ /* Celulas */
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    background-color: var(--verde);
+    color: var(--branco);
+    text-align: center;
+    padding: 0 10px;
+}
+a{ /* link para excluir */
+    text-decoration: none;
+    color: var(--azul);
+}
+a:hover{ /* Quando o cursor estiver em cima */
+    color: var(--roxo);
+}
 
+/* Mensagem Erro */
+#divErro{
+    border: 2px var(--laranja) solid;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--marrom);
+    color: var(--branco);
+    /* Alinha o form no centro */
+    width: fit-content; 
+    margin-left: auto;
+    margin-right: auto;
 }

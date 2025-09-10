@@ -1,0 +1,30 @@
+[
+    {
+        "id": "68c1c1b9e0360",
+        "nome": "tiranosasuro",
+        "nomeCientif": "Tyrannosaurus rex",
+        "grupo": "ST",
+        "periodo": "C"
+    },
+    {
+        "id": "68c1c2c911019",
+        "nome": "Pterod\u00e1ctilo",
+        "nomeCientif": "Pterodactylus antiquus",
+        "grupo": "O",
+        "periodo": "J"
+    },
+    {
+        "id": "68c1c3702c8ec",
+        "nome": "estegossauro",
+        "nomeCientif": "Stegosaurus",
+        "grupo": "OT",
+        "periodo": "J"
+    },
+    {
+        "id": "68c1c3e32962f",
+        "nome": "Pinacossauro",
+        "nomeCientif": "Pinacosaurus",
+        "grupo": "OT",
+        "periodo": "C"
+    }
+]
