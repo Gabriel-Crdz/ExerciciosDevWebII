@@ -9,10 +9,10 @@ class Estado{
         $this->sigla = $s;
     }
 
-    public function getNome(): string{
+    public function getNomeEstado(): string{
         return $this->nome;
     }
-    public function setNome(string $n): self{
+    public function setNomeEstado(string $n): self{
         $this->nome = $n;
         return $this;
     }
