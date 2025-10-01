@@ -2,11 +2,16 @@
 
 include_once("Connection.php");
 
-$conn = Connection::getConnection();
-print_r($conn);
+$conn = Connection::getConnection(); // Chama o método que cria a conexão
+// print_r($conn);
 
+$sql = "SELECT * FROM times";
+$stm = $conn->prepare($sql); // Prepara a instrução
+$stm -> execute(); // Executa a instrução
+
+$dados = $stm -> fetchAll(); // Retorna todos os registros encontrados
+// print_r($dados);
 ?>
-
 
 <!--HTML-->
 <!DOCTYPE html>
@@ -24,10 +29,17 @@ print_r($conn);
             <th>ID</th>
             <th>Nome</th>
             <th>Cidade</th>
-            <th></th>
-        </tr>
-
-    
+            <th>Excluir</th>
+        </tr> 
+        
+        <?php foreach($dados as $t): ?>
+        <tr>
+            <td><?= $t["id"] ?></td>
+            <td><?= $t["nome"]?></td>
+            <td><?= $t["cidade"]?></td>
+            <td><a onclick="return confirm('Confirme a exclusão');" href="timeExcluir.php?id=<?= $t['id']?>">Excluir</td>
+        </tr> 
+        <?php endforeach; ?>
     </table>
 </body>
 </html>

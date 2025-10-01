@@ -15,8 +15,11 @@ class Connection{
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC //Define o retorno das consultas como array associativo (campo => valor)
                 );
 
-                self::$conn = new PDO(
-                    "mysql:host=localhost;dbname=DBtimes", "root", "bancodedados", $opcoes); // Cria o objeto de conexão
+                self::$conn = new PDO( // Cria o objeto de conexão
+                    "mysql:host=localhost;dbname=DBtimes", 
+                    "root", // Usuario
+                    "bancodedados", // Senha
+                    $opcoes); 
             } 
             catch (PDOException $e){
                 echo $e->getMessage();
