@@ -9,7 +9,7 @@ $sql = "SELECT * FROM produtos";
 $stm = $conn->prepare($sql); // Prepara a instrução
 $stm -> execute(); // Executa a instrução
 
-$dados = $stm -> fetchAll(); // Retorna todos os registros encontrados
+$produtos = $stm -> fetchAll(); // Retorna todos os registros encontrados
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +28,15 @@ $dados = $stm -> fetchAll(); // Retorna todos os registros encontrados
             <th>ID</th>
             <th>Descrição</th>
             <th>uni Medida</th>
+            <th>Excluir</th>
         </tr>
 
         <?php foreach($produtos as $p):?>
         <tr>
-            <td><?= $d["id"] ?></td>
-            <td><?= $d["descricao"] ?></td>
-            <td><?= $d["un_medida"] ?></td>
-            <td><a onclick="return confirm('Deseja excluir esse item?');" href="excluirProduto.php?id=<?= $t['id']?>">Excluir</a></td>
+            <td><?= $p["id"] ?></td>
+            <td><?= $p["descricao"] ?></td>
+            <td><?= $p["un_medida"] ?></td>
+            <td><a onclick="return confirm('Deseja excluir esse item?');" href="excluirProduto.php?id=<?= $p['id']?>">Excluir</a></td>
         </tr>
         <?php endforeach;?>
     </table>

@@ -16,15 +16,16 @@ class Connection{
                 );
 
                 self::$conn = new PDO(
-                    "mysql:host=localhost;dbname=db_produtos", 
+                    "mysql:host=localhost;dbname=dbprodutos", 
                     "root", // Usuario
-                    "bancodedados", // Senha
+                    "1234", // Senha
                     $opcs);
             }
             catch(PDOException $e){
                 echo $e->getMessage();
             }
         }
+        return self::$conn;
     }
 }
 

@@ -42,9 +42,17 @@ th{
 }
 td{
     border: 2px solid var(--violeta);
-    background-color: var(--lavanda-claro);
+    background-color: var(--roxo-palatinado);
     padding-left: 5px;
     padding-right: 10px;
+}
+a{ /* link para excluir */
+    text-decoration: none;
+    color: var(--branco);
+}
+a:hover{ /* Quando o curso estiver em cima*/
+    text-decoration: underline;
+    color: var(--lavanda-claro);
 }
 
 #cadastro{
@@ -56,7 +64,7 @@ td{
     border: 1px solid var(--violeta);
     border-radius: 10px;
     padding: 2px;
-    /* Alinha o button no centro */
+    /* Alinha o "button" no centro */
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -87,7 +95,8 @@ input{
     text-align: center;
     background-color: var(--violeta);
     color: var(--branco);
-    /* Alinha o form no centro */
+    /* Alinha a div no centro */
+    margin-top: 20px;
     width: fit-content; 
     margin-left: auto;
     margin-right: auto;
