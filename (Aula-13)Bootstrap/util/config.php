@@ -11,5 +11,5 @@ define("DB_USER", "root");
 define("DB_PASSWORD", "bancodedados");
 
 /* Configurações de URL */
-define("URL_BASE", "http://localhost/2-Semestre/ExerciciosDevWebII/(Aula-13)Bootstrap/Alunos");
+define("URL_BASE", "http://localhost/2-Semestre/ExerciciosDevWebII/(Aula-13)Bootstrap");
 ?>
