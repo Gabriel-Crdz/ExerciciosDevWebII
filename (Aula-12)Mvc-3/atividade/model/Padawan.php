@@ -13,7 +13,15 @@ class Padawan{
     private ?Planeta $planeta;
 
     /* Metodos */
- 
+    
+    public function getStatusDesc(){
+        if($this->status == "T") return "Em treinamento";
+        elseif($this->status == "A") return "Aprovado";
+        elseif($this->status == "M") return "Morto";
+        elseif($this->status == "E") return "Exilado";
+        return "";
+    }
+
     /*Getter, Setter Id */
     public function getId(): ?int{
         return $this->id;

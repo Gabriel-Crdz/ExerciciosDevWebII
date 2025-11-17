@@ -33,7 +33,7 @@ include_once(__DIR__ . "/../include/header.php");
             <td><?= $p->getNome() ?></td>
             <td><?= $p->getEspecie() ?></td>
             <td><?= $p->getIdade() ?></td>
-            <td><?= $p->getStatus() ?></td>
+            <td><?= $p->getStatusDesc() ?></td>
             <td><?= $p->getMestre()->getNomeTitulo() ?></td>
             <td><?= $p->getPlaneta()->getPlanetaDesc() ?></td>
             <td> 

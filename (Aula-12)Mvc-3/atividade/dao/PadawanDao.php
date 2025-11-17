@@ -51,5 +51,19 @@ class PadawanDao{
         }
         return $padawans;
     }
+
+    public function insert(Padawan $padawan){
+        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(),
+                    $padawan->getStatus(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId());
+        try{
+            $sql = "INSERT INTO padawan(nome, especie, idade, status, id_mestre, id_planeta)
+                VALUES(?, ?, ?, ?, ?, ?)";
+            $stm = $this->conn->prepare($sql);
+            $stm->execute($dados);
+        }
+        catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
 }
 ?>
