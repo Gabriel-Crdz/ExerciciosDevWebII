@@ -72,7 +72,7 @@ class Padawan{
       public function getPlaneta(): ?Planeta{
         return $this->planeta;
     }
-    public function setPLaneta(?Planeta $planeta): self{
+    public function setPlaneta(?Planeta $planeta): self{
         $this->planeta = $planeta;
         return $this;
     }
