@@ -44,3 +44,8 @@ if(isset($_POST["nome"])){
     if(!$erros) header("location:listar.php"); // Se nao dar erro retorna para listar.php
     else $msgErros = implode("<br>" , $erros);
 }
+
+// print_r($padawan);
+
+include_once(__DIR__ . "/form.php");
+?>

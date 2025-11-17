@@ -16,7 +16,7 @@ include_once(__DIR__ . "/../include/header.php");
 
 <h2><?= $padawan && $padawan->getID() > 0 ? "Editando Dados" : "Inserido Dados"?> do padawan</h2>
 <div style="color: red;">
-    <= $$msgErros ?>
+    <?= $msgErros ?>
 </div>
 <form action="" method="POST">
     <div>
