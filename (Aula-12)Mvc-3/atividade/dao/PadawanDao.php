@@ -10,7 +10,7 @@ class PadawanDao{
     }
 
     public function list(){
-        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad,
+        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad
         FROM padawan pa 
         JOIN mestre m ON (m.id = pa.id_mestre)
         JOIN planeta pl ON (pl.id = pa.id_planeta);";

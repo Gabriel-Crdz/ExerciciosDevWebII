@@ -10,7 +10,7 @@ CREATE TABLE mestre(
 CREATE TABLE planeta( 
  id INT AUTO_INCREMENT NOT NULL,  
  nome VARCHAR(20) NOT NULL,  
- regiao VARCHAR(40) NOT NULL,  
+ regiao VARCHAR(2) NOT NULL,  
  quadrante VARCHAR(3) NOT NULL,  
  CONSTRAINT pk_planeta PRIMARY KEY (id)
 ); 
@@ -19,10 +19,12 @@ CREATE TABLE planeta(
 CREATE TABLE padawan ( 
  id INT AUTO_INCREMENT NOT NULL,  
  nome VARCHAR(40) NOT NULL,  
- especie(20) INT NOT NULL,  
+ especie VARCHAR(20) NOT NULL,  
  idade INT NOT NULL,  
  status VARCHAR(1) NOT NULL,   
- CONSTRAINT pk_padawans PRIMARY KEY (id)
+ id_mestre INT NOT NULL,
+ id_planeta INT NOT NULL,
+ CONSTRAINT pk_padawan PRIMARY KEY (id)
 ); 
 
 /* Chaves Estrangeiras */
