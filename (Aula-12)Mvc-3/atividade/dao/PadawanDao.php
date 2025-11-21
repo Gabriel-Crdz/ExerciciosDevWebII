@@ -65,5 +65,46 @@ class PadawanDao{
             die($e->getMessage());
         }
     }
+    public function findId(int $id){
+        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad
+        FROM padawan pa 
+        JOIN mestre m ON (m.id = pa.id_mestre)
+        JOIN planeta pl ON (pl.id = pa.id_planeta)
+        WHERE pa.id=?;";
+
+        $stm = $this->conn->prepare($sql);
+        $stm->execute([$id]);
+        $result = $stm->fetchAll();
+        $padawans = $this->map($result);;
+
+        if(count($padawans) == 1) return $padawans[0]; // Retorna um objeto aluno
+        return NULL; // Retorna null por nao possuir o aluno
+    }
+
+    public function update(Padawan $padawan){
+        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(),
+                    $padawan->getStatus(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId(), $padawan->getId());
+        try{
+            $sql = "UPDATE padawan
+                    SET nome = ?, especie = ?, idade = ?, status = ?, id_mestre = ?, id_planeta = ? 
+                    WHERE id = ?";
+            $stm = $this->conn->prepare($sql);
+            $stm->execute($dados);
+        }
+        catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
+
+    public function delete(int $id){
+        try{
+            $sql = "DELETE FROM padawan WHERE id=?";
+            $stm = $this->conn->prepare($sql);
+            $stm->execute(array($id));
+        }
+        catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
 }
 ?>

@@ -21,6 +21,19 @@ class PadawanController{
 
         return $erros;
     }
+
+    public function buscarId(int $id){
+        return $this->padawanDao->findId($id);
+    }
+
+    public function editar(Padawan $padawan){
+        $erros = $this->padawanService->validar($padawan); // Chamando a validação dos campos
+        if(!$erros) $this->padawanDao->update($padawan); // Se nao der erro atualiza cadastro
+    }
+
+    public function deletar(int $id){
+        return $this->padawanDao->delete($id);
+    }
 }
 
 ?>
