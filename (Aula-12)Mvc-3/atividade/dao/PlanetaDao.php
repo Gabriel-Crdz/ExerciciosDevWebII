@@ -10,7 +10,7 @@ class PlanetaDao{
     }
 
     public function list(){
-        $sql = "SELECT * FROM planeta ORDER BY nome";
+        $sql = "SELECT * FROM planeta;";
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();
@@ -25,6 +25,8 @@ class PlanetaDao{
             $planeta->setNome($r["nome"]);
             $planeta->setRegiao($r["regiao"]);
             $planeta->setQuad($r["quadrante"]);
+
+            array_push($planetas, $planeta);
         }
         return $planetas;
     }

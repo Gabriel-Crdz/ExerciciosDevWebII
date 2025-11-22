@@ -14,10 +14,10 @@ CREATE TABLE planeta(
  quadrante VARCHAR(4) NOT NULL,  
  CONSTRAINT pk_planeta PRIMARY KEY (id)
 ); 
-/* Insert's */
+-- Insert's
 INSERT INTO planeta (nome, regiao, quadrante) 
 VALUES 
-/* Nucleo Profundo */
+-- Nucleo Profundo
 ('Vupter', 'NP', 'L-10'),
 ('Ojom', 'NP', 'M-11'),
 ('Byss', 'NP', 'K-11'),
@@ -25,7 +25,7 @@ VALUES
 ('Khomm', 'NP', 'L-12'),
 ('Tython', 'NP', 'K-10');
 
-/* Nucleo */
+-- Nucleo
 INSERT INTO planeta (nome, regiao, quadrante) 
 VALUES 
 ('Alderaan', 'N', 'M-10'),
@@ -37,7 +37,7 @@ VALUES
 ('Plexis', 'N', 'L-13'),
 ('Abregado-rae', 'N', 'K-13');
 
-/* Colonias */
+-- Colonias
 INSERT INTO planeta (nome, regiao, quadrante) 
 VALUES 
 ('Uquine', 'C', 'N-10'),
@@ -49,7 +49,8 @@ VALUES
 ('Neimoidia', 'C', 'M-10'),
 ('Exodeen', 'C', 'M-12'),
 ('Borleias', 'C', 'K-09');
-/* Orla Interna */
+
+-- Orla Interna
 INSERT INTO planeta (nome, regiao, quadrante) 
 VALUES 
 ('Bernilla', 'OI', 'L-14'),
@@ -57,14 +58,14 @@ VALUES
 ('Champala', 'OI', 'M-08'),
 ('Dwartii', 'OI', 'N-08'),
 ('Thyferra', 'OI', 'L-14'),
-('Jakku', 'OI', 'L-13')
+('Jakku', 'OI', 'L-13'),
 ('Li-Toran', 'OI', 'M-13'),
 ('Gilvaanen', 'OI', 'L-08'),
 ('Mechis III', 'OI', 'L-14'),
 ('Sergia', 'OI', 'J-15'),
 ('Throffdon', 'OI', 'J-09'),
-('Xibariz', 'OI', ),
-("Yag'Dhul", 'OI', 'L-14');
+('Xibariz', 'OI', 'O-09'),
+('Yag Dhul', 'OI', 'L-14');
 
 /* TABELA padawan */
 CREATE TABLE padawan ( 
