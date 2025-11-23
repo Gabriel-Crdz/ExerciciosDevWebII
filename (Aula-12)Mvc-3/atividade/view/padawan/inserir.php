@@ -9,12 +9,12 @@ if(isset($_POST["nome"])){
     // Já Enviou
 
     /* Captura dos valores do form + validação */
-    $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : null;
-    $especie = trim($_POST["especie"]) ? trim($_POST["especie"]) : null;
-    $idade = is_numeric($_POST["idade"]) ? $_POST["idade"] : null;
-    $status = $_POST["status"] ? $_POST["status"] : null;
-    $idMestre = is_numeric($_POST["mestre"]) ? $_POST["mestre"]: null;
-    $idPlaneta = is_numeric($_POST["planeta"]) ? $_POST["planeta"] : null;
+    $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : NULL;
+    $especie = trim($_POST["especie"]) ? trim($_POST["especie"]) : NULL;
+    $idade = is_numeric($_POST["idade"]) ? $_POST["idade"] : NULL;
+    $status = $_POST["status"] ? $_POST["status"] : NULL;
+    $idMestre = is_numeric($_POST["mestre"]) ? $_POST["mestre"]: NULL;
+    $idPlaneta = is_numeric($_POST["planeta"]) ? $_POST["planeta"] : NULL;
 
     /* Salvado no Objeto Padawan */
     $padawan = new Padawan();
@@ -29,14 +29,14 @@ if(isset($_POST["nome"])){
         $mestre->setId($idMestre);
         $padawan->setMestre($mestre);
     }
-    else $padawan->setMestre(null);
+    else $padawan->setMestre(NULL);
 
     if($idPlaneta){ // Validação de planeta
         $planeta = new Planeta;
         $planeta->setId($idPlaneta);
         $padawan->setPlaneta($planeta);
     }
-    else $padawan->setPlaneta(null);
+    else $padawan->setPlaneta(NULL);
 
     $padawanCont = new PadawanController();
     $erros = $padawanCont->inserir($padawan);

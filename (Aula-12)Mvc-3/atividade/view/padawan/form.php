@@ -14,83 +14,86 @@ $planetas = $planetaCont->listar();
 include_once(__DIR__ . "/../include/header.php");
 ?>
 
-<h2><?= $padawan && $padawan->getID() > 0 ? "Editando Dados" : "Inserido Dados"?> do padawan</h2>
-<div style="color: red;">
-    <?= $msgErros ?>
+<h2><?= $padawan && $padawan->getID() > 0 ? "Editando Dados" : "Inserido Dados" ?> do padawan</h2>
+<div>
+    <?php if ($msgErros): ?>
+        <div class="alert alert-danger">
+            <?= $msgErros ?>
+        </div>
+    <?php endif; ?>
 </div>
-<form action="" method="POST">
-    <div>
-        <label for="txtNome">Nome:</label>
-        <input type="text" name="nome"
-            placeholder="Informe o nome" value="<?= $padawan ? $padawan->getNome() : ""  // Operador Ternario ?>"> 
+
+<form method="POST">
+
+    <div class="row mb-2">
+        <label class="col-4" for="txtNome">Nome:</label>
+        <input class="col-6" type="text" name="nome"
+            placeholder="Informe o nome" value="<?= $padawan ? $padawan->getNome() : ""  // Operador Ternario ?>">
     </div>
 
-    <div>
-        <label for="txtEspecie">Especie:</label>
-        <input type="text" name="especie"
-            placeholder="Informe a especie" value="<?= $padawan ? $padawan->getEspecie() : ""  // Operador Ternario ?>"> 
+    <div class="row mb-2">
+        <label class="col-4" for="txtEspecie">Especie:</label>
+        <input class="col-6" type="text" name="especie"
+            placeholder="Informe a especie" value="<?= $padawan ? $padawan->getEspecie() : ""  // Operador Ternario ?>">
     </div>
 
-    <div>
-        <label for="txtIdade">Idade:</label>
-        <input type="number" name="idade"
+
+    <div class=" row mb-2">
+        <label class="col-4" for="txtIdade">Idade:</label>
+        <input class="col-6" type="number" name="idade"
             placeholder="Informe a idade" value="<?= $padawan ? $padawan->getIdade() : ""  // Operador Ternario ?>">
     </div>
 
-    <div>
-    <label for="SelStatus">Status:</label>
-    <select name="status">
-        <option value="">- Selecione -</option>
-        <option value="T" <?= $padawan && $padawan->getStatus() == 'T' ? 'selected': '' ?>>Em treinamento</option>
-        <option value="A" <?= $padawan && $padawan->getStatus() == 'A' ? 'selected': '' ?>>Aprovado</option>
-        <option value="M" <?= $padawan && $padawan->getStatus() == 'M' ? 'selected': '' ?>>Morto</option>
-        <option value="E" <?= $padawan && $padawan->getStatus() == 'E' ? 'selected': '' ?>>Exilado</option>
-    </select>
-    </div>
-
-    <div>
-        <label for="selMestre">Mestre:</label>
-        <select name="mestre">
+    <div class="row mb-2">
+        <label class="col-4" for="SelStatus">Status:</label>
+        <select class="col-6" name="status">
             <option value="">- Selecione -</option>
-
-            <?php foreach($mestres as $m): ?>
-                <option value="<?= $m->getId(); ?>?" <?php if($padawan && $padawan->getMestre() && $padawan->getMestre()->getId() == $m->getId()){
-                    echo "selected";
-                    }
-                    ?>
-                    ><?= $m->getNomeTitulo() ?>
-                </option>
-           <?php endforeach; ?>
+            <option value="T" <?= $padawan && $padawan->getStatus() == 'T' ? 'selected' : '' ?>>Em treinamento</option>
+            <option value="A" <?= $padawan && $padawan->getStatus() == 'A' ? 'selected' : '' ?>>Aprovado</option>
+            <option value="M" <?= $padawan && $padawan->getStatus() == 'M' ? 'selected' : '' ?>>Morto</option>
+            <option value="E" <?= $padawan && $padawan->getStatus() == 'E' ? 'selected' : '' ?>>Exilado</option>
         </select>
     </div>
 
-
-    <div>
-        <label for="selPlaneta">Planeta:</label>
-        <select name="planeta">
+    <div class=" row mb-2">
+        <label class="col-4" for="selMestre">Mestre:</label>
+        <select class="col-6" name="mestre">
             <option value="">- Selecione -</option>
 
-            <?php foreach($planetas as $p): ?>
-                <option value="<?= $p->getId(); ?>?" <?php if($padawan && $padawan->getPlaneta() && $padawan->getPlaneta()->getId() == $p->getId()){
+            <?php foreach ($mestres as $m): ?>
+                <option value="<?= $m->getId(); ?>" <?php if ($padawan && $padawan->getMestre() && $padawan->getMestre()->getId() == $m->getId()) {
                     echo "selected";
                     }
-                    ?>
-                    ><?= $p->getPlanetaDesc() ?>
+                    ?>><?= $m->getNomeTitulo() ?>
                 </option>
-           <?php endforeach; ?>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
+    <div class="row mb-2">
+        <label class="col-4" for="selPlaneta">Planeta:</label>
+        <select class="col-6" name="planeta">
+            <option value="">- Selecione -</option>
+
+            <?php foreach ($planetas as $p): ?>
+                <option value="<?= $p->getId(); ?>" <?php if ($padawan && $padawan->getPlaneta() && $padawan->getPlaneta()->getId() == $p->getId()) {
+                    echo "selected";
+                    }
+                    ?>><?= $p->getPlanetaDesc() ?>
+                </option>
+            <?php endforeach; ?>
         </select>
     </div>
 
     <input name="id" type="hidden" value="<?= $padawan ? $padawan->getId() : 0 ?>">
-
-    <div class="mt-2">
+    
+                    
+    <div class="mt-3 d-flex justify-content-center gap-5">
         <button type="submit" class="btn btn-success">Gravar</button>
-    </div>
+        <a href="listar.php" class="btn btn-danger">Voltar</a>
+    </div>     
 </form>
 
-<div>
-    <a href="listar.php">Voltar</a>
-</div>
 <?php
 include_once(__DIR__ . "/../include/footer.php");
 ?>

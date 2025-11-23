@@ -10,7 +10,7 @@ class PadawanDao{
     }
 
     public function list(){
-        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad
+        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad, pl.regiao regiao_galaxia
         FROM padawan pa 
         JOIN mestre m ON (m.id = pa.id_mestre)
         JOIN planeta pl ON (pl.id = pa.id_planeta);";
@@ -33,6 +33,7 @@ class PadawanDao{
             $padawan->setId($r['id']);
             $padawan->setNome($r['nome']);
             $padawan->setEspecie($r['especie']);
+            $padawan->setIdade($r['idade']);
             $padawan->setStatus($r['status']);
 
             $mestre->setId($r['id_mestre']);
@@ -42,7 +43,7 @@ class PadawanDao{
             $planeta->setId($r['id_planeta']);
             $planeta->setNome($r['nome_planeta']);
             $planeta->setQuad($r['quad']);
-            $planeta->setRegiao($r['regiao']);
+            $planeta->setRegiao($r['regiao_galaxia']);
 
             $padawan->setMestre($mestre);
             $padawan->setPlaneta($planeta);
@@ -66,7 +67,7 @@ class PadawanDao{
         }
     }
     public function findId(int $id){
-        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad
+        $sql = "SELECT pa.*, m.nome nome_mestre, m.titulo titulo_mestre, pl.nome nome_planeta, pl.quadrante quad, pl.regiao regiao_galaxia
         FROM padawan pa 
         JOIN mestre m ON (m.id = pa.id_mestre)
         JOIN planeta pl ON (pl.id = pa.id_planeta)

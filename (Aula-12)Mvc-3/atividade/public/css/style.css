@@ -1,0 +1,56 @@
+/* Paleta de cores */
+:root{
+    --branco: #ffffff;
+    --cinza-escuro: #1c1d22;
+    --cinza: #313b44;
+    --cinza-claro: #606467;
+    --cinza-prata: #aaa8ad;
+    --vermelho: #e62815;
+    --marrom: #8b4944;
+}
+
+body{
+    background-image: url('./../img/espaco.jpg');
+    color: var(--cinza-prata);
+    /* Alinhamentos */
+    max-width: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+/* Form.php */
+form{
+    font-size: larger;
+    background-color: var(--cinza-escuro);
+    border: 1px solid var(--marrom);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: end;
+}
+
+/* Listar.php */
+table {
+    border-collapse: collapse;
+    background-color: var(--cinza);
+    color: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+}
+th {
+    background: var(--vermelho);
+    padding: 12px;
+    text-align: left;
+}
+td {
+    padding: 10px 12px;
+}
+tr:hover {
+    background: var(--marrom);
+}
+img {
+  width: 25px;
+  height: 25px;
+}
+

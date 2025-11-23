@@ -29,6 +29,7 @@ class PadawanController{
     public function editar(Padawan $padawan){
         $erros = $this->padawanService->validar($padawan); // Chamando a validação dos campos
         if(!$erros) $this->padawanDao->update($padawan); // Se nao der erro atualiza cadastro
+        return $erros;
     }
 
     public function deletar(int $id){

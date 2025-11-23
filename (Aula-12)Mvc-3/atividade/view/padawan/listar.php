@@ -9,12 +9,12 @@ include_once(__DIR__ . "/../include/header.php");
 <h3>Listagem de Padawans</h3> 
 
 <div>
-    <a href="inserir.php">Inserir</a>
+    <a href="inserir.php" class="mt-2 mb-3 btn btn-success">Inserir</a>
 </div>
 
-<table border=1>
+<table>
     <!-- Cabeçalho -->
-    <tr>
+    <tr class= "table-danger">
         <th>ID</th>
         <th>Nome</th>
         <th>Especie</th>
@@ -38,11 +38,11 @@ include_once(__DIR__ . "/../include/header.php");
             <td><?= $p->getPlaneta()->getPlanetaDesc(); $p->getPlaneta()->getQuad()?></td>
             <td> 
                 <a onclick="return confirm('Confirma a edição?')" href="editar.php?id=<?= $p->getId()?>"> 
-                <img src="../../img/btn_editar.png"></a> 
+                <img src="../../public/img/alterar.png"></a> 
             </td>
             <td> 
                 <a onclick="return confirm('Confirma a exclusão?')" href="excluir.php?id=<?= $p->getId()?>"> 
-                <img src="../../img/btn_excluir.png"></a> 
+                <img src="../../public/img/excluir.png"></a> 
             </td>
         <tr>
     <?php endforeach; ?>
