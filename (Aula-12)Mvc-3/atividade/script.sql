@@ -24,7 +24,7 @@ VALUES
 ('Luminara Unduli', 'M'),
 ('Barriss Offee', 'M'),
 ('Jocasta Nu', 'M'),
-('Shaifo-Dias', 'M'),
+('Sifo-Dyas', 'M'),
 ('Mace Windu', 'G'),
 ('Yoda', 'G'),
 ('Satele Shan', 'G'),
@@ -41,9 +41,9 @@ CREATE TABLE planeta(
  CONSTRAINT pk_planeta PRIMARY KEY (id)
 ); 
 -- Insert's
+-- Nucleo Profundo(NP)
 INSERT INTO planeta (nome, regiao, quadrante) 
 VALUES 
--- Nucleo Profundo(NP)
 ('Vupter', 'NP', 'L-10'),
 ('Ojom', 'NP', 'M-11'),
 ('Byss', 'NP', 'K-11'),
@@ -107,9 +107,9 @@ VALUES
 ('Urajab', 'RE', 'L-16'),
 ('Cymoon', 'RE', 'L-15'),
 ('Kyros', 'RE', 'L-08'),
-('Thustra', 'RE', 'O-07'),
+('Thustra', 'RE', 'O-07');
 
---Orla Media(OM)
+-- Orla Media(OM)
 INSERT INTO planeta(nome, regiao, quadrante)
 VALUES
 ('Naboo', 'OM', 'M-13'),
@@ -125,7 +125,7 @@ VALUES
 ('Trandosha', 'OM', 'P-09'),
 ('Shu-Torun', 'OM', 'J-07');
 
---Orla Exterior(OE)
+-- Orla Exterior(OE)
 INSERT INTO planeta(nome, regiao, quadrante)
 VALUES
 ('Endor', 'OE', 'S-06'),
