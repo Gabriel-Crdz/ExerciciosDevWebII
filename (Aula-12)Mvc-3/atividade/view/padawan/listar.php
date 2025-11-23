@@ -35,7 +35,7 @@ include_once(__DIR__ . "/../include/header.php");
             <td><?= $p->getIdade() ?></td>
             <td><?= $p->getStatusDesc() ?></td>
             <td><?= $p->getMestre()->getNomeTitulo() ?></td>
-            <td><?= $p->getPlaneta()->getPlanetaDesc() ?></td>
+            <td><?= $p->getPlaneta()->getPlanetaDesc(); $p->getPlaneta()->getQuad()?></td>
             <td> 
                 <a onclick="return confirm('Confirma a edição?')" href="editar.php?id=<?= $p->getId()?>"> 
                 <img src="../../img/btn_editar.png"></a> 

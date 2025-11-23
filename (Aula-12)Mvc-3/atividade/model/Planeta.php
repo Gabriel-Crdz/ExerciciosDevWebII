@@ -20,7 +20,7 @@ class Planeta{
     }
 
     public function getPlanetaDesc(){
-        return $this->nome . " - " .$this->getRegiaoDesc() . " - " . $this->quad;
+        return $this->nome . " - " .$this->getRegiaoDesc();
     }
     /*Getter, Setter Id */
     public function getId(): ?int{
