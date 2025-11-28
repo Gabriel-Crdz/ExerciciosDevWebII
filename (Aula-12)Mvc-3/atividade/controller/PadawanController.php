@@ -15,11 +15,11 @@ class PadawanController{
     }  
 
     public function inserir(Padawan $padawan){
-        $erros = $this->padawanService->validar($padawan);
+        $erros = $this->padawanService->validar($padawan); // Validação dos dados
 
         if(!$erros) $this->padawanDao->insert($padawan); // Se nao tiver erros insere no banco
 
-        return $erros;
+        return $erros; // Se tiver erros retorna eles
     }
 
     public function buscarId(int $id){
@@ -28,7 +28,7 @@ class PadawanController{
 
     public function editar(Padawan $padawan){
         $erros = $this->padawanService->validar($padawan); // Chamando a validação dos campos
-        if(!$erros) $this->padawanDao->update($padawan); // Se nao der erro atualiza cadastro
+        if(!$erros) $this->padawanDao->update($padawan); // Se nao tiver erros atualiza cadastro
         return $erros;
     }
 

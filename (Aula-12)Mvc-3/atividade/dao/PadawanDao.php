@@ -78,7 +78,7 @@ class PadawanDao{
         $result = $stm->fetchAll();
         $padawans = $this->map($result);;
 
-        if(count($padawans) == 1) return $padawans[0]; // Retorna um objeto aluno
+        if(count($padawans) == 1) return $padawans[0]; // Retorna o objeto padawan
         return NULL; // Retorna null por nao possuir o aluno
     }
 

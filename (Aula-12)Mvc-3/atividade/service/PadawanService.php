@@ -13,7 +13,7 @@ class PadawanService{
         if(!$padawan->getMestre()) array_push($erros, "Informe o mestre!");
         if(!$padawan->getPlaneta()) array_push($erros, "Informe o planeta de origem!");
         
-        return $erros;
+        return $erros; // Retorna um array com uma mensagem para cada campo errado!
     }
 }
 

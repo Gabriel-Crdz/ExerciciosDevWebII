@@ -8,7 +8,7 @@ $padawan = NULL;
 if(isset($_POST["nome"])){
     // Já Enviou
 
-    /* Captura dos valores do form + validação */
+    /* Captura dos valores do form + validação previa */
     $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : NULL;
     $especie = trim($_POST["especie"]) ? trim($_POST["especie"]) : NULL;
     $idade = is_numeric($_POST["idade"]) ? $_POST["idade"] : NULL;
@@ -24,14 +24,14 @@ if(isset($_POST["nome"])){
     $padawan->setIdade($idade);
     $padawan->setStatus($status);
 
-    if($idMestre){ // Validação do mestre
+    if($idMestre){ // Salva o ID do mestre
         $mestre = new Mestre();
         $mestre->setId($idMestre);
         $padawan->setMestre($mestre);
     }
     else $padawan->setMestre(NULL);
 
-    if($idPlaneta){ // Validação de planeta
+    if($idPlaneta){ // Salva o ID do planeta
         $planeta = new Planeta;
         $planeta->setId($idPlaneta);
         $padawan->setPlaneta($planeta);
@@ -39,9 +39,9 @@ if(isset($_POST["nome"])){
     else $padawan->setPlaneta(NULL);
 
     $padawanCont = new PadawanController();
-    $erros = $padawanCont->inserir($padawan);
+    $erros = $padawanCont->inserir($padawan); // Captura os erros do inserir se houve
 
-    if(!$erros) header("location:listar.php"); // Se nao dar erro retorna para listar.php
+    if(!$erros) header("location:listar.php"); // Se nao tiver errso retorna para listar.php
     else $msgErros = implode("<br>" , $erros);
 }
 

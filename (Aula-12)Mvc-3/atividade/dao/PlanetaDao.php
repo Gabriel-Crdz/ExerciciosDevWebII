@@ -14,7 +14,7 @@ class PlanetaDao{
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();
-        return $this->map($result);
+        return $this->map($result); // Chama o metodo de mapeamento Objeto-Relacionamento
     }
 
     private function map(array $result){

@@ -9,7 +9,7 @@ $padawan = NULL;
 if(isset($_POST["nome"])){
     // Já Enviou
 
-    /* Captura dos valores do form + validação */
+    /* Captura dos valores do form + validação previa */
     $id = $_POST['id'];
     $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : NULL;
     $especie = trim($_POST["especie"]) ? trim($_POST["especie"]) : NULL;
@@ -26,14 +26,14 @@ if(isset($_POST["nome"])){
     $padawan->setIdade($idade);
     $padawan->setStatus($status);
 
-    if($idMestre){ // Validação do mestre
+    if($idMestre){ // Salva o ID do mestre
         $mestre = new Mestre();
         $mestre->setId($idMestre);
         $padawan->setMestre($mestre);
     }
     else $padawan->setMestre(NULL);
 
-    if($idPlaneta){ // Validação de planeta
+    if($idPlaneta){ // Salva o ID do planeta
         $planeta = new Planeta;
         $planeta->setId($idPlaneta);
         $padawan->setPlaneta($planeta);
@@ -42,13 +42,13 @@ if(isset($_POST["nome"])){
 
     $padawanCont->editar($padawan);
 
-    if(!$erros) header("location:listar.php"); // Se nao dar erro retorna para listar.php
+    if(!$erros) header("location:listar.php"); // Se nao tiver erros retorna para listar.php
     else $msgErros = implode("<br>" , $erros);
 }
 else{
     if(isset($_GET['id'])) $id = $_GET['id'];
 
-    $padawan = $padawanCont->buscarId($id);
+    $padawan = $padawanCont->buscarId($id); // Procura pelo ID do padawan para editar
     if(!$padawan){
         echo "Padawan não encontrado!<br>";
         echo "<a href='listar.php'>Voltar</a>";
