@@ -14,7 +14,8 @@ if(isset($_POST["nome"])){
     $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : NULL;
     $especie = trim($_POST["especie"]) ? trim($_POST["especie"]) : NULL;
     $idade = is_numeric($_POST["idade"]) ? $_POST["idade"] : NULL;
-    $status = $_POST["status"] ? $_POST["status"] : NULL;
+    $corSabre = trim($_POST["sabre"]) ? $_POST["sabre"] : NULL;
+    $estado = $_POST["estado"] ? $_POST["estado"] : NULL;
     $idMestre = is_numeric($_POST["mestre"]) ? $_POST["mestre"]: NULL;
     $idPlaneta = is_numeric($_POST["planeta"]) ? $_POST["planeta"] : NULL;
 
@@ -24,7 +25,8 @@ if(isset($_POST["nome"])){
     $padawan->setNome($nome);
     $padawan->setEspecie($especie);
     $padawan->setIdade($idade);
-    $padawan->setStatus($status);
+    $padawan->setSabre($corSabre);
+    $padawan->setEstado($estado);
 
     if($idMestre){ // Salva o ID do mestre
         $mestre = new Mestre();
@@ -40,7 +42,7 @@ if(isset($_POST["nome"])){
     }
     else $padawan->setPlaneta(NULL);
 
-    $padawanCont->editar($padawan);
+    $erros = $padawanCont->editar($padawan);
 
     if(!$erros) header("location:listar.php"); // Se nao tiver erros retorna para listar.php
     else $msgErros = implode("<br>" , $erros);

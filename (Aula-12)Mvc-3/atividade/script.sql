@@ -164,3 +164,5 @@ CREATE TABLE padawan (
 /* Chaves Estrangeiras */
 ALTER TABLE padawan ADD CONSTRAINT fk_mestre FOREIGN KEY (id_mestre) REFERENCES mestre (id);
 ALTER TABLE padawan ADD CONSTRAINT fk_planeta FOREIGN KEY (id_planeta) REFERENCES planeta (id);
+
+ALTER TABLE padawan ADD COLUMN cor_sabre VARCHAR(20) NOT NULL DEFAULT "azul";

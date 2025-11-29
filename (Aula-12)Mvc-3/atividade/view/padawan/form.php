@@ -43,15 +43,21 @@ include_once(__DIR__ . "/../include/header.php");
         <input class="col-6" type="number" name="idade"
             placeholder="Informe a idade" value="<?= $padawan ? $padawan->getIdade() : ""  // Operador Ternario ?>">
     </div>
+    
+    <div class=" row mb-2">
+        <label class="col-4" for="txtSabre">Cor Sabre:</label>
+        <input class="col-6" type="txt" name="sabre"
+            placeholder="Informe a cor do sabre" value="<?= $padawan ? $padawan->getSabre() : ""  // Operador Ternario ?>">
+    </div>
 
     <div class="row mb-2">
-        <label class="col-4" for="SelStatus">Status:</label>
-        <select class="col-6" name="status">
+        <label class="col-4" for="Selestado">estado:</label>
+        <select class="col-6" name="estado">
             <option value="">- Selecione -</option>
-            <option value="T" <?= $padawan && $padawan->getStatus() == 'T' ? 'selected' : '' ?>>Em treinamento</option>
-            <option value="A" <?= $padawan && $padawan->getStatus() == 'A' ? 'selected' : '' ?>>Aprovado</option>
-            <option value="M" <?= $padawan && $padawan->getStatus() == 'M' ? 'selected' : '' ?>>Morto</option>
-            <option value="E" <?= $padawan && $padawan->getStatus() == 'E' ? 'selected' : '' ?>>Exilado</option>
+            <option value="T" <?= $padawan && $padawan->getEstado() == 'T' ? 'selected' : '' ?>>Em treinamento</option>
+            <option value="A" <?= $padawan && $padawan->getEstado() == 'A' ? 'selected' : '' ?>>Aprovado</option>
+            <option value="M" <?= $padawan && $padawan->getEstado() == 'M' ? 'selected' : '' ?>>Morto</option>
+            <option value="E" <?= $padawan && $padawan->getEstado() == 'E' ? 'selected' : '' ?>>Exilado</option>
         </select>
     </div>
 

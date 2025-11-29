@@ -7,18 +7,19 @@ class Padawan{
     private ?int $id;
     private ?string $nome;
     private ?string $especie;
-    private ?string $status;
+    private ?string $estado;
     private ?int $idade;
+    private ?string $sabre;
     private ?Mestre $mestre;
     private ?Planeta $planeta;
 
     /* Metodos */
     
-    public function getStatusDesc(){
-        if($this->status == "T") return "Em treinamento";
-        elseif($this->status == "A") return "Aprovado";
-        elseif($this->status == "M") return "Morto";
-        elseif($this->status == "E") return "Exilado";
+    public function getEstadoDesc(){
+        if($this->estado == "T") return "Em treinamento";
+        elseif($this->estado == "A") return "Aprovado";
+        elseif($this->estado == "M") return "Morto";
+        elseif($this->estado == "E") return "Exilado";
         return "";
     }
 
@@ -49,15 +50,24 @@ class Padawan{
         return $this;
     }
 
-    /* Getter, Setter Status */
-    public function getStatus(): ?string{
-        return $this->status;
+    /* Getter, Setter estado */
+    public function getEstado(): ?string{
+        return $this->estado;
     }
-    public function setStatus(?string $status): self{
-        $this->status = $status;
+    public function setEstado(?string $estado): self{
+        $this->estado = $estado;
         return $this;
     }
-
+    
+    /* Getter, Setter estado */
+    public function getSabre(): ?string{
+        return $this->sabre;
+    }
+    public function setSabre(?string $sabre): self{
+        $this->sabre = $sabre;
+        return $this;
+    }
+    
     /*Getter, Setter Idade */
     public function getIdade(): ?int{
         return $this->idade;

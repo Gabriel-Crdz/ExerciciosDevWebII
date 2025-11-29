@@ -34,7 +34,8 @@ class PadawanDao{
             $padawan->setNome($r['nome']);
             $padawan->setEspecie($r['especie']);
             $padawan->setIdade($r['idade']);
-            $padawan->setStatus($r['status']);
+            $padawan->setSabre($r['cor_sabre']);
+            $padawan->setEstado($r['estado']);
 
             $mestre->setId($r['id_mestre']);
             $mestre->setNome($r['nome_mestre']);
@@ -54,11 +55,11 @@ class PadawanDao{
     }
 
     public function insert(Padawan $padawan){
-        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(),
-                    $padawan->getStatus(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId());
+        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(), $padawan->getSabre(),
+                    $padawan->getEstado(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId());
         try{
-            $sql = "INSERT INTO padawan(nome, especie, idade, status, id_mestre, id_planeta)
-                VALUES(?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO padawan(nome, especie, idade, cor_sabre, estado, id_mestre, id_planeta)
+                VALUES(?, ?, ?, ?, ?, ?, ?)";
             $stm = $this->conn->prepare($sql);
             $stm->execute($dados);
         }
@@ -83,12 +84,12 @@ class PadawanDao{
     }
 
     public function update(Padawan $padawan){
-        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(),
-                    $padawan->getStatus(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId(), $padawan->getId());
+        $dados = array($padawan->getNome(),$padawan->getEspecie(), $padawan->getIdade(), $padawan->getSabre(),
+                    $padawan->getEstado(), $padawan->getMestre()->getId(), $padawan->getPlaneta()->getId(), $padawan->getId());
         try{
             $sql = "UPDATE padawan
-                    SET nome = ?, especie = ?, idade = ?, status = ?, id_mestre = ?, id_planeta = ? 
-                    WHERE id = ?";
+                    SET nome = ?, especie = ?, idade = ?, cor_sabre = ?, estado = ?, id_mestre = ?, id_planeta = ? 
+                    WHERE id = ?;";
             $stm = $this->conn->prepare($sql);
             $stm->execute($dados);
         }

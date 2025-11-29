@@ -10,7 +10,8 @@
 }
 
 body{
-    background-image: url('./../img/espaco.jpg');
+    background: url('./../img/hyper.gif') no-repeat center center fixed;
+    background-size: cover;
     color: var(--cinza-prata);
     /* Alinhamentos */
     max-width: fit-content;

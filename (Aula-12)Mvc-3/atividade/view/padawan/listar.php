@@ -19,6 +19,7 @@ include_once(__DIR__ . "/../include/header.php");
         <th>Nome</th>
         <th>Especie</th>
         <th>Idade</th>
+        <th>Cor sabre</th>
         <th>Status</th>
         <th>Mestre</th>
         <th>Planeta</th>
@@ -33,7 +34,8 @@ include_once(__DIR__ . "/../include/header.php");
             <td><?= $p->getNome() ?></td>
             <td><?= $p->getEspecie() ?></td>
             <td><?= $p->getIdade() ?></td>
-            <td><?= $p->getStatusDesc() ?></td>
+            <td><?= $p->getSabre() ?></td>
+            <td><?= $p->getEstadoDesc() ?></td>
             <td><?= $p->getMestre()->getNomeTitulo() ?></td>
             <td><?= $p->getPlaneta()->getPlanetaDesc(); $p->getPlaneta()->getQuad()?></td>
             <td> 

@@ -9,6 +9,6 @@ define("DB_HOST", "localhost");
 define("DB_NAME", "db_padawan");
 define("DB_USER", "root");
 define("DB_PASSWORD", "bancodedados");
-define("URL_BASE", "http://localhost/2-Semestre/ExerciciosDevWebII/(Aula-12)Mvc-3/atividade");
+define("URL_BASE", "http://localhost/ExerciciosDevWebII/(Aula-12)Mvc-3/atividade");
 
 ?>
