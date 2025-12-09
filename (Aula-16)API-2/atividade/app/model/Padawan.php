@@ -1,6 +1,8 @@
 <?php
-include_once(__DIR__ . "/Mestre.php");
-include_once(__DIR__ . "/Planeta.php");
+
+namespace App\Model;
+use \Mestre;
+use \Planeta;
 
 class Padawan{
     /* Atributos */
@@ -15,12 +17,17 @@ class Padawan{
 
     /* Metodos */
     
-    public function getEstadoDesc(){
-        if($this->estado == "T") return "Em treinamento";
-        elseif($this->estado == "A") return "Aprovado";
-        elseif($this->estado == "M") return "Morto";
-        elseif($this->estado == "E") return "Exilado";
-        return "";
+    public function JsonSerialize(): array{
+        return array(
+            "id" => $this->id, 
+            "nome" => $this->nome,
+            "cidade" => $this->especie,
+            "estado" => $this->estado,
+            "idade" => $this->estado,
+            "cor_sabre" => $this->estado,
+            "id_mestre" => $this->mestre->getId(),
+            "id_planeta" => $this->planeta->getId()
+        );
     }
 
     /*Getter, Setter Id */

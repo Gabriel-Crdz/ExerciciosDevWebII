@@ -1,5 +1,8 @@
 <?php
-include_once(__DIR__ . "/../model/Padawan.php");
+
+namespace App\Service;
+
+use App\Model\Padawan;
 
 class PadawanService{
     public function validar(Padawan $padawan){

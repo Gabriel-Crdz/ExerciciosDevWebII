@@ -7,21 +7,6 @@ class Planeta{
     private string $quad;
 
     /* Metodos */
-
-    public function getRegiaoDesc(){
-        if($this->regiao == 'NP') return "Nucleo Profundo";
-        elseif($this->regiao == 'N') return "Nucleo";
-        elseif($this->regiao == 'C') return "Colonias";
-        elseif($this->regiao == 'OI') return "Orla Interna";
-        elseif($this->regiao == 'RE') return "Região de Expansão";
-        elseif($this->regiao == 'OM') return "Orla Media";
-        elseif($this->regiao == 'OE') return "Orla Exterior";
-        return "";
-    }
-
-    public function getPlanetaDesc(){
-        return $this->nome . " - " .$this->getRegiaoDesc() . " - " . $this->getQuad();
-    }
     /*Getter, Setter Id */
     public function getId(): ?int{
         return $this->id;

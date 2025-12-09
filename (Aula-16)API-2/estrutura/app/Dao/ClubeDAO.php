@@ -42,7 +42,7 @@ class ClubeDAO {
             return null;
         else if(count($arrayObj) > 1)
             new Exception("Mais de um registro encontrado para o ID " . $id);
-        else //count($arrayObj) == 1
+        else
             return $arrayObj[0];
     }
 

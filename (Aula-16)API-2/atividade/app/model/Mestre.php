@@ -6,17 +6,6 @@ class Mestre{
     private string $titulo;
 
     /* Metodos */
-    public function getTituloDesc(){
-        if($this->titulo == "C") return "Cavaleiro";
-        elseif($this->titulo == "M") return "Mestre";
-        elseif($this->titulo == "G") return "Grande-Mestre";
-        return "";
-    }
-
-    public function getNomeTitulo(){
-        return $this->nome . " - " . $this->getTituloDesc();
-    }
-
     /*Getter, Setter Id */
     public function getId(): ?int{
         return $this->id;
